@@ -56,7 +56,7 @@ namespace atm_program
 
                 balance_alt balance_alt = new balance_alt();
 
-                balance_alt.balance_change(balance, op);
+                balance = balance_alt.balance_change(balance, op);
 
                 Console.WriteLine("Would you like to exit?");
 

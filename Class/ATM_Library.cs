@@ -46,6 +46,7 @@ namespace ATM_Library
     {
         public double balance_change(double balance, string op)
         {
+            double bal = 0;
             switch (op)
             {
                 case "d":
@@ -60,11 +61,12 @@ namespace ATM_Library
                         Console.WriteLine("Please enter a number:");
                         deposit_amt = Console.ReadLine();
                     }
-                    double new_bal_d = balance + new_deposit_amt;
+                    bal = balance + new_deposit_amt;
 
                     // output new balance
                     Console.WriteLine("Deposit Successful");
-                    Console.WriteLine($"New balance: £{new_bal_d}");
+                    Console.WriteLine($"New balance: £{bal}");
+                    return bal;
                     break;
 
 
@@ -75,19 +77,26 @@ namespace ATM_Library
                     double new_withdraw_amt = 0;
 
                     // convert string to double 
-                    while (!double.TryParse(withdraw_amt, out new_deposit_amt))
+                    while (!double.TryParse(withdraw_amt, out new_withdraw_amt))
                     {
                         Console.WriteLine("Please enter a number:");
-                        deposit_amt = Console.ReadLine();
+                        withdraw_amt = Console.ReadLine();
                     }
-                    double new_bal_w = balance + new_deposit_amt;
 
+                    // check if funds are sufficient
+                    while (new_withdraw_amt > balance)
+                    {
+                        Console.WriteLine("Insuffient funds");
+                        return balance;
+                    }
+
+                    bal = balance - new_withdraw_amt;
                     // output new balance
                     Console.WriteLine($"You have withdrawn £{new_withdraw_amt}");
-                    Console.WriteLine($"New balance: £{new_bal_w}");
-                    break;
+                    Console.WriteLine($"New balance: £{bal}");
+                    return bal;
             }
-            return balance;
+            return bal;
         }
     }
 }
