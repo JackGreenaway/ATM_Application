@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM_Application", "ATM_Application\ATM_Application.csproj", "{9ABEDAA5-B505-4D50-AA7A-E401C4306C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class", "Class\Class.csproj", "{77130C19-76EF-41A3-ABE6-77D41D632D6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "atmLlibrary", "Class\atmLlibrary.csproj", "{77130C19-76EF-41A3-ABE6-77D41D632D6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
